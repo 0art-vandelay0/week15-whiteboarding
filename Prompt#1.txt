@@ -1,0 +1,69 @@
+--------------------------------------------------------
+
+Question #1: Turning Strings to URLs
+URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
+
+Example
+Input: "Jasmine Ann Jones"
+
+Output: "Jasmine%20Ann%20Jones"
+
+--------------------------------------------------------
+
+// Psuedo:
+
+urlString = "";
+
+// def stringToUrl
+    w/ string param
+// initilize empty string
+    urlString = ""
+// loop through string chars
+    for index in string, i++
+// if at index = " ", then:
+    replace with %20
+// else then: append char at index
+
+
+const stringToUrl = (string) => {
+    let urlString = "";
+
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
+            urlString += "%20";
+        } else {
+            urlString += string[i];
+        }
+    }
+    return urlString;
+}
+
+stringToUrl("this. a string");
+output "this.%20a%20sting"
+
+
+arguments:
+string, index = 0, urlString "";
+
+base case
+recursive case
+
+const stringToUrl = (string, index = 0, urlString = "") => {
+    //Base case
+    if (index == string.length) {
+        retrun urlString;
+    }
+
+    // Recursive case
+    if (string[index] === " ") {
+        urlString += "%20"
+    } else {
+        urlString += string[index]
+    }
+
+    //call
+    return stringToUrl(string, index(???), urlString);
+
+}
